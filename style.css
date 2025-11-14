@@ -12,23 +12,23 @@ body {
 .music-player {
     display: flex;
     flex-direction: column;
-    /* Reduzindo o padding para um player menor */
-    padding: 15px; 
+    /* Reduzindo o padding */
+    padding: 12px; 
     background-color: #f8f8f8;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra um pouco mais sutil */
-    /* Reduzindo a largura geral do player */
-    width: 280px; /* De 380px para 280px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Reduzindo drasticamente a largura */
+    width: 240px; /* De 280px para 240px */
     /* Reduzindo o espaçamento entre as linhas */
-    gap: 12px; /* De 20px para 12px */
+    gap: 10px; /* De 12px para 10px */
 }
 
 .player-row {
     display: flex;
-    align-items: center;
+    align-items: center; /* Mantém o alinhamento vertical */
     width: 100%;
-    /* Reduzindo o espaçamento entre o botão/ícone e o slider */
-    gap: 10px; /* De 15px para 10px */
+    /* Reduzindo o espaçamento da linha */
+    gap: 10px; 
 }
 
 /* Botão de Play/Pause */
@@ -36,11 +36,11 @@ body {
     background: #007bff;
     border: none;
     color: white;
-    /* Reduzindo o tamanho da fonte do ícone */
-    font-size: 18px; /* De 24px para 18px */
-    /* Reduzindo o tamanho do botão */
-    width: 40px; /* De 50px para 40px */
-    height: 40px; /* De 50px para 40px */
+    /* Reduzindo o ícone */
+    font-size: 16px; /* De 18px para 16px */
+    /* Reduzindo o botão */
+    width: 36px; /* De 40px para 36px */
+    height: 36px; /* De 40px para 36px */
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -57,24 +57,24 @@ body {
 /* Caixa do Ícone de Volume */
 .icon-wrapper {
     color: #007bff;
-    /* Reduzindo o tamanho da fonte do ícone */
-    font-size: 18px; /* De 24px para 18px */
-    /* Reduzindo o tamanho da caixa para coincidir com o botão */
-    width: 40px; /* De 50px para 40px */
-    height: 40px; /* De 50px para 40px */
+    /* Reduzindo o ícone */
+    font-size: 16px; /* De 18px para 16px */
+    /* Reduzindo a caixa para coincidir com o botão */
+    width: 36px; /* De 40px para 36px */
+    height: 36px; /* De 40px para 36px */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
 }
 
-/* Containers dos Sliders */
+/* Containers dos Sliders (AQUI ESTÁ A CORREÇÃO DO BUG) */
 .progress-container,
 .volume-container {
     display: flex;
     align-items: center;
-    width: 100%;
-    flex-grow: 1;
+    flex-grow: 1; /* Ocupa o espaço restante */
+    min-width: 0; /* Permite que o container encolha */
 }
 
 /* Estilo dos Sliders */
@@ -82,9 +82,9 @@ body {
 .volume-slider {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
-    /* Reduzindo a espessura das barras */
-    height: 6px; /* De 8px para 6px */
+    width: 100%; /* O slider ocupa 100% do seu container */
+    /* Reduzindo a espessura da barra */
+    height: 5px; /* De 6px para 5px */
     background: #e0e0e0;
     border-radius: 5px;
     outline: none;
@@ -96,19 +96,19 @@ body {
 .volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    /* Reduzindo o tamanho do pino */
-    width: 14px; /* De 18px para 14px */
-    height: 14px; /* De 18px para 14px */
+    /* Reduzindo o pino */
+    width: 12px; /* De 14px para 12px */
+    height: 12px; /* De 14px para 12px */
     background: #007bff;
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra mais suave */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .progress-slider::-moz-range-thumb,
 .volume-slider::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background: #007bff;
     border-radius: 50%;
     cursor: pointer;
